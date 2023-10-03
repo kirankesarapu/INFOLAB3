@@ -28,6 +28,8 @@ public class Mainframe extends javax.swing.JFrame {
     public Mainframe() {
         initComponents();
     }
+    
+    Image image;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -242,12 +244,16 @@ public class Mainframe extends javax.swing.JFrame {
            JLabel lName = new JLabel("Name :"+name + " "+lastName);
            JLabel lAge = new JLabel("Age :"+age);
            JLabel lEmail = new JLabel("Email :"+email);
-           JLabel lMessage = new JLabel("Message :"+message);
+           JLabel lMessage = new JLabel("Message :"+message);           
+           JLabel lImage = new JLabel("Image" );
+           lImage.setIcon(new ImageIcon(image));
+
            
            successPanel.add(lName);
            successPanel.add(lAge);
            successPanel.add(lEmail);
            successPanel.add(lMessage);
+           successPanel.add(lImage);
            
            a.getContentPane().add(successPanel);
            a.pack();
@@ -276,7 +282,7 @@ public class Mainframe extends javax.swing.JFrame {
              String selectedImagePath = selectedImageFile.getAbsolutePath();
              
              ImageIcon a = new ImageIcon(selectedImagePath);
-             Image image = a.getImage().getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),Image.SCALE_SMOOTH);
+             image = a.getImage().getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(),Image.SCALE_SMOOTH);
              imageLabel.setIcon(new ImageIcon(image));
              
          }
