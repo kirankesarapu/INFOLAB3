@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
@@ -248,7 +249,7 @@ public class Mainframe extends javax.swing.JFrame {
            JLabel lImage = new JLabel("Image" );
            lImage.setIcon(new ImageIcon(image));
 
-           
+           successPanel.setLayout(new BoxLayout(successPanel, BoxLayout.Y_AXIS));
            successPanel.add(lName);
            successPanel.add(lAge);
            successPanel.add(lEmail);
